@@ -7,13 +7,15 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    #@users = User.paginate(page: params[:page], per_page: 10)
     @users = User.all
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    respond_to do |format|
+      format.html
+    end
   end
 
   # GET /users/new
@@ -23,6 +25,9 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    respond_to do |format|
+      format.html
+    end
   end
 
   # POST /users

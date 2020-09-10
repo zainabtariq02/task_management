@@ -7,19 +7,31 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
+    respond_to do |format|
+      format.html
+    end
   end
 
   # GET /tasks/1
   # GET /tasks/1.json
   def show
+    respond_to do |format|
+      format.html
+    end
   end
 
   # GET /tasks/new
-  def new 
+  def new
+    respond_to do |format|
+      format.html
+    end
   end
 
   # GET /tasks/1/edit
   def edit
+    respond_to do |format|
+      format.html
+    end
   end
 
   # POST /tasks

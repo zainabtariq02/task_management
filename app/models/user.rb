@@ -25,9 +25,10 @@ class User < ApplicationRecord
   private
 
   def can_destroy?
-    unless tasks_as_assignee.empty? && tasks_as_reviewer.empty? && tasks_created.empty?
-      errors.add(:base, "Can't be destroyed")
-      throw :abort
-    end
+    return true if tasks_as_assignee.empty? && tasks_as_reviewer.empty? && tasks_created.empty?
+    
+    errors.add(:base, "Can't be destroyed")
+    throw :abort
+    
   end
 end
